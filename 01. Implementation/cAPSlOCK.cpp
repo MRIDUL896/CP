@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    string str;
+    cin >> str;
+    bool condition = true;
+    for (size_t i = 1; i < str.length(); i++) {
+        if (str[i] >= 'a' && str[i] <= 'z') {
+            condition = false;
+            break;
+        }
+    }
+    if (condition) {
+        for (size_t i = 0; i < str.length(); i++) {
+            if (str[i] >= 'A' && str[i] <= 'Z') {
+                str[i] = str[i] - 'A' + 'a';
+            } else {
+                str[i] = str[i] - 'a' + 'A';
+            }
+        }
+    }
+    cout << str << "\n";
+    return 0;
+}
