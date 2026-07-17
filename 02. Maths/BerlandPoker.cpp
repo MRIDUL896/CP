@@ -1,22 +1,21 @@
 #include<bits/stdc++.h>
-
 using namespace std;
 
-void solve() {
+int solve() {
     int n, m, k;
-    cin >> n >> m >> k;
-    int cards_per_player = n / k;
-    int x = min(m, cards_per_player);
-    int remaining_jokers = m - x;
-    int y = (remaining_jokers + k - 2) / (k - 1);
-    cout << x - y << "\n";
+    cin>>n>>m>>k;
+    int onePerson = n/k;
+    if(onePerson >= m) return m;
+    int remJokers = m - onePerson;
+    int minJokers = (remJokers+(k-1)-1)/(k-1);
+    return onePerson-minJokers;
 }
 
 int main() {
     int t;
     cin >> t;
     while (t--) {
-        solve();
+        cout<<solve()<<endl;
     }
     return 0;
 }
