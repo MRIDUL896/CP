@@ -13,6 +13,6 @@ int main(){
         z = round(pow(10,c-1));
         x = round(pow(10,a-1));
         y = round(pow(10,b-1)) + z;
-        cout<<x<<" "<<y<<" "<<z<<endl;
+        cout<<x<<" "<<y<<endl;
     }
 }
